@@ -8,6 +8,10 @@ Detailed instructions are available in my Medium article [here](https://medium.c
 
 The short of it is create a special Dropbox folder and attach a folder action to this folder. Drop the remote_adjust_vol and adjust_volume scripts into the folder.
 
+Here is the configuration for my folder action:
+
+![Image of Folder Action](https://cdn-images-1.medium.com/max/2000/1*jFdOV7Zz60OgWRSeYygOMA.png)
+
 To run, simply start the bash shell and type `sh adjust_volume [arg]`.
 
 The arguments are as follows:
