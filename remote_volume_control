@@ -1,0 +1,75 @@
+#!/usr/bin/osascript
+
+-- Remotely Control the Volume on Your Mac
+--
+-- *** INSTRUCTIONS ***
+--
+-- to run:	sh remote_vol_adjust [ARG]
+--
+-- options: mute 			mutes the remote computer
+-- 		    unmute			unmutes
+--			louder			increases the volume by 10%
+--			quieter			decreases the volume by 10%
+--			louder by x		increases the volume by x%
+--			quieter by x	decreases the volume by x%
+--
+
+-- *** USER-SET VARIABLES ---
+set remote_machine to [YOUR_COMPUTER_ADDRESS]	-- found under System Preferences > Sharing
+
+on run argv
+	
+	set remoteComputer to machine remote_machine
+
+	tell application "Finder" of remoteComputer 
+
+		-- extract the user's command
+		set command to (item 1 of argv)
+
+		-- mute volume
+		if command is equal to "mute" then 
+			
+			set _muted to (get (output muted of (get volume settings)))
+			
+			if _muted is false then
+				set volume with output muted
+			else
+				set volume without output muted
+			end if
+
+		-- unmute volume
+		else if command is equal to "unmute" then
+
+			set volume without output muted
+
+		-- adjust volume
+		else if command is equal to "louder" or command is equal to "quieter" then 
+
+			if count of argv > 1 and (item 2 of argv) equal to "by"
+
+					set adjust_by to (item 3 of argv) as integer
+					my adjust_volume(command, adjust_by)
+
+			-- default volume adjustment is 10%
+			else 
+				adjust_volume(command, 10)
+
+			end if
+
+		end if
+
+	end tell
+
+end run
+
+on adjust_volume(adjustment, adjust_by)
+
+	set vol to output volume of (get volume settings)
+
+	if adjustment is equal to "louder"
+		set volume output volume (vol + adjust_by)
+	else if adjustment is equal to "quieter"
+		set volume output volume (vol - adjust_by)
+	end if
+
+end adjust_volume
