@@ -17,7 +17,7 @@ To run, simply start the bash shell and type `sh adjust_volume [arg]`.
 The arguments are as follows:
 * **mute**
 * **unmute**
-* *x* (between -100 and 100, alters the volume by x%)
+* **x** (enter a number between -100 and 100, alters the volume by x%)
 
 ## Remote Apple Events:
 
@@ -28,9 +28,9 @@ To run, simply start the bash shell and type `sh remote_volume_control [arg]`.
 The arguments are as follows:
 * **mute**
 * **unmute**
-* *louder* (increases the volume by 10%)
-* *quieter* (decreases the volume by 10%)
-* *louder x* (increases the volume by x%)
-* *quieter x* (decreases the volume by x%)
+* **louder** (increases the volume by 10%)
+* **quieter** (decreases the volume by 10%)
+* **louder x** (increases the volume by x%)
+* **quieter x** (decreases the volume by x%)
 
 The downside to this approach is that each time Apple will prompt you to enter the username and password for the computer you are connecting to.
