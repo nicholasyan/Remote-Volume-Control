@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$1" == "mute" ] ; then
+	echo "muting volume..."
+	echo "" > "mute"
+elif [ "$1" == "unmute" ] ; then
+	echo "unmuting volume..."
+	echo "" > "unmute"
+else
+	echo "adjusting volume by ${1}..."
+	echo "" > $1
+fi
