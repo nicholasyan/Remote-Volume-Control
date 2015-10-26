@@ -14,10 +14,12 @@
 --			quieter by x	decreases the volume by x%
 --
 
--- *** USER-SET VARIABLES ---
-set remote_machine to [YOUR_COMPUTER_ADDRESS]	-- found under System Preferences > Sharing
-
 on run argv
+
+	-- *** USER-SET VARIABLES *** ---
+	set remote_machine to [YOUR_COMPUTER_ADDRESS]	-- found under System Preferences > Sharing
+
+	-- main code
 	
 	set remoteComputer to machine remote_machine
 
