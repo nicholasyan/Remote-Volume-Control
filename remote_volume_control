@@ -4,7 +4,7 @@
 --
 -- *** INSTRUCTIONS ***
 --
--- to run:	sh remote_vol_adjust [ARG]
+-- to run:	sh remote_volume_control [ARG]
 --
 -- options: mute 			mutes the remote computer
 -- 		    unmute			unmutes
