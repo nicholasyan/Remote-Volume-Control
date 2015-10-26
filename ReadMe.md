@@ -1,6 +1,6 @@
 # Remotely Control the Volume on Your Mac
 
-There are two solutions available:
+There are two solutions available.
 
 ## Folder Actions (Recommended)
 
